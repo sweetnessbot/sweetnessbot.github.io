@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+.menu-main {
+    list-style: none;
+    margin: 40px 0 5px;
+    padding: 25px 0 5px;
+    text-align: center;
+    /* background: white; фон за меню*/
+}
+
+.menu-main li {
+    display: inline-block;
+}
+
+.menu-main li:after {
+    content: "★";
+    /* разделения */
+    color: blueviolet;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.menu-main li:last-child:after {
+    content: none;
+}
+
+.menu-main a {
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    /* шрифт */
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 34px 0 30px;
+    font-size: 17px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color.2s;
+}
+
+.menu-main a,
+.menu-main a:visited {
+    color: aqua;
+}
+
+
+/* цвет текста */
+
+.menu-main a.current,
+.menu-main a:hover {
+    /*    color: crimson; */
+    background: linear-gradient(to right, cyan, cyan, cyan, blue, blueviolet, rgb(247, 0, 255), rgb(255, 0, 0), rgb(255, 123, 0), rgb(251, 255, 0), rgb(23, 253, 2));
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: rainbow 10s ease infinite;
+    animation: rainbow 10s ease infinite;
+}
+
+.menu-main a:before,
+.menu-main a:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    left: 50%;
+    background-color: blueviolet;
+    /* цвет линии под текстом */
+    transition: .90s;
+}
+
+.menu-main a:hover:before,
+.menu-main .current:before {
+    left: 0;
+}
+
+.menu-main a:hover:after,
+.menu-main .current:after {
+    right: 0;
+}
+
+@media (max-width: 550px) {
+    .menu-main {
+        padding-top: 0;
+    }
+    .menu-main li {
+        display: block;
+    }
+    .menu-main li:after {
+        content: none;
+    }
+    .menu-main a {
+        padding: 25px 0 20px;
+        margin: 0 30px;
+    }
+}
+
+
+/* шрифты*/
+
+.bodys {
+    font-family: 'Oswald', cursive;
+}
+
+
+/*радужный текст*/
+
+.rainbow-animated {
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: rainbow 10s ease infinite;
+    animation: rainbow 10s ease infinite;
+    font-size: 25px;
+    line-height: 35px;
+}
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+
+/* фон */
+
+body {
+    background-image: url("/images/Discord_stUGWMHXom.png");
+    background-size: 100%;
+    background-size: cover;
+    -webkit-background-size: 100%;
+    background-attachment: fixed;
+    background-position: center center;
+}
